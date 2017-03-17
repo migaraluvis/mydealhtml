@@ -24,6 +24,11 @@ header {
     @include bp('mobile', 'max') {
         padding-top: 116px !important;
     }
+
+    &.directory-menu-open {
+        margin-left: 255px;
+        transition: 0.5s;
+    }
 }
 
 .logo-section {

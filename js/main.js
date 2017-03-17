@@ -44,6 +44,11 @@
         	position: { my : "left top", at: "left bottom-1" }
         });
 
+        $('.logo-section .categories.burger-menu-icon').on('click', function(){
+            $('div.main-container').toggleClass('directory-menu-open');
+            $('.main-nav-group').toggle(500);
+        });
+
         $(window).resize(function(){
         	$(window).trigger('orientationchange');
         });

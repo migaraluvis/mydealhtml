@@ -710,6 +710,9 @@ header {
   @media (max-width: 520px) {
     .main-container {
       padding-top: 116px !important; } }
+  .main-container.directory-menu-open {
+    margin-left: 255px;
+    transition: 0.5s; }
 
 .logo-section {
   height: 80px; }
