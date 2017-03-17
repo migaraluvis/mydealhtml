@@ -1,0 +1,60 @@
+// Colours
+$c-white: #ffffff;
+$c-black: #000000;
+$c-dark-grey: #444;
+$c-top-header-grey: #4d4d4d;
+$c-border-color: #dcdcdc;
+$c-burger-menu: #c7c7c7;
+$c-red: #d43b3b;
+$c-light-grey: #f7f7f7;
+$c-menu-background: #f9f8f8;
+$c-footer-background: #464646;
+$c-social-background: #6c6c6c;
+$c-mainmenu-background: #F7F7F7;
+
+// Colours applied
+$c-text: $c-dark-grey;
+$c-form-text: $c-dark-grey;
+$c-form-bg: $c-white;
+$c-form-border: $c-black;
+$c-social-icons: $c-footer-background;
+
+// Button colour classes
+$colour-classes: (
+    primary: $c-red,
+    secondary: $c-white,
+    alert: $c-black,
+    success: $c-black
+);
+$colour-classes-active: (
+    primary: $c-white,
+    secondary: $c-white,
+    alert: $c-white,
+    success: $c-white
+);
+
+// Layout
+$standard-padding: 20px;
+$max-width: 1600px;
+$grid-columns: 12;
+
+$homepage-component-wrapper-width: 90%;
+
+// Break point max-widths
+$breakpoints: (
+    desktop: auto,
+    tablet: 1024px,
+    mobile: 520px
+);
+
+// Break point min-widths
+$breakpoints-min: (
+    mobile: 0px,
+    tablet: 521px,
+    desktop: 1025px
+);
+
+// Standards
+$standard-fontsize: 14px;
+$standard-lineheight: 1.3;
+$static-lineheight: #{$standard-fontsize * $standard-lineheight};

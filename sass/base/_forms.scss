@@ -1,0 +1,13 @@
+.select, input[type="text"] {
+    border: 1px solid $c-border-color;
+}
+
+.select, input {
+    padding: 10px 5px;
+}
+
+input[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}

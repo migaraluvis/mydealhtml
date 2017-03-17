@@ -1,0 +1,32 @@
+@charset 'UTF-8';
+
+// Settings / functions
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'vendor/flex';
+
+// Reset/normalize
+@import
+    'vendor/normalize',
+    'base/reset';
+
+// Base
+@import
+    'base/grid',
+    'base/helpers',
+    'base/layout',
+    'base/typography',
+    'base/forms';
+
+// Components
+@import
+    'components/buttons',
+    'components/icons',
+    'components/header',
+    'components/footer',
+    'components/flexslider',
+    'components/mainmenu';
+
+// Page specific
+@import
+    'pages/home';

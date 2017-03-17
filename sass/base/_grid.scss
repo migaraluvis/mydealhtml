@@ -1,0 +1,65 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+[class*="col-"] {
+    @include flex(0, 0, auto);
+    padding-left: #{$standard-padding / 2};
+    padding-right: #{$standard-padding / 2};
+}
+
+.container {
+    @extend %clearfix;
+    @extend %flexbox;
+    @include flex-wrap(wrap);
+    position: relative;
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+
+    .container {
+        margin-left: #{$standard-padding / -2};
+        margin-right: #{$standard-padding / -2};
+    }
+
+    @for $i from 1 to $grid-columns + 1 {
+        .col-#{$i} {
+            width: #{100 / $grid-columns * $i * 1%};
+        }
+        .offset-#{$i} {
+            margin-left: #{100 / $grid-columns * $i * 1%};
+        }
+    }
+
+    @for $i from 1 to 5 {
+        .order-#{$i} {
+            @include order($i);
+        }
+    }
+
+    @each $size, $width in $breakpoints {
+        @include bp($size) {
+            @for $i from 1 to $grid-columns + 1 {
+                .#{$size}-col-#{$i} {
+                    width: #{100 / $grid-columns * $i * 1%};
+                }
+            }
+
+            .#{$size}-offset-0 {
+                margin-left: 0;
+            }
+
+            @for $i from 1 to 5 {
+                .#{$size}-order-#{$i} {
+                    @include order($i);
+                }
+            }
+        }
+    }
+}

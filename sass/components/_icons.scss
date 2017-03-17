@@ -1,0 +1,24 @@
+$icons: (('cart', 28px, 24px), ('user', 21px, 21px), ('delivery', 22px, 22px), ('products', 22px, 22px), ('secure', 22px, 22px), ('contact', 20px, 19px));
+
+.icon {
+    display: inline-block;
+
+    @each $icon, $width, $height in $icons {
+        &.#{$icon} {
+            background: url(../img/icons/#{$icon}.svg) center center no-repeat;
+            @include dimensions(#{$width}, #{$height});
+        }
+    }
+
+    &.contact {
+        margin-bottom: -5px;
+        margin-right: 10px;
+    }
+}
+
+.social-icon {
+    @include border-radius(100%);
+    text-align: center;
+    color: $c-social-icons;
+    background-color: $c-social-background;
+}

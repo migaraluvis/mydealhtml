@@ -1,0 +1,94 @@
+%clearfix {
+    *zoom: 1;
+
+    &:before, &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.clearfix {
+    @extend %clearfix;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+    &.focusable:active,
+    &.focusable:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.align-right {
+    text-align: right;
+}
+
+img {
+    max-width: 100%;
+}
+
+.centre-valign {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.right-line {
+    position: relative;
+    
+    @include bp('desktop', 'min') {
+        &:after {
+            content: "";
+            height: 50/80*100%;
+            border-left: 1px solid $c-border-color;
+            right: 0;
+            top: 15/80*100%;
+            position: absolute;
+        }
+    }
+}
+
+[hidden],
+.hide {
+    display: none !important;
+}
+
+@each $size, $width in $breakpoints {
+    @include bp($size, only) {
+        .#{$size}-hide {
+            display: none !important;
+        }
+    }
+}
+
+html, body {
+    /* fix iOS scrolling bugs with fixed elements */
+    -webkit-overflow-scrolling : touch !important;
+    overflow: auto !important;
+    height: auto !important;
+}

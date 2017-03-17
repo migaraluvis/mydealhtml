@@ -1,0 +1,58 @@
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    filter: alpha(opacity=#{$opacity * 100}); // IE8
+}
+
+@mixin rotate($rotation) {
+    -webkit-transform: rotate($rotation);
+    -ms-transform: rotate($rotation);
+    transform: rotate($rotation);
+    will-change: transform;
+}
+
+@mixin bp($breakpoint, $minmax: 'max') {
+    @if ($breakpoint == 'desktop' and $minmax == 'only') {
+        $minmax: min;
+    }
+
+    @if ($minmax == 'only') {
+        @media (min-width: #{map-get($breakpoints-min, $breakpoint)}) and (max-width: #{map-get($breakpoints, $breakpoint)}) {
+            @content;
+        }
+    } @elseif ($minmax == 'min') {
+        @media (min-width: #{map-get($breakpoints-min, $breakpoint)}) {
+            @content;
+        }
+    } @else {
+        @media (max-width: #{map-get($breakpoints, $breakpoint)}) {
+            @content;
+        }
+    }
+}
+
+@mixin dimensions($width:auto, $height:auto) {
+    width: $width;
+    height: $height;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+@mixin flex-display {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}

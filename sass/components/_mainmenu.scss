@@ -1,0 +1,15 @@
+#main-menu {
+	background-color: $c-mainmenu-background;
+	text-align: center;
+
+	li {
+		margin:1.07em 0.9em;
+		display: inline;		
+		list-style: none;
+		list-style-image:none;
+
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+}

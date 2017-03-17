@@ -1,0 +1,29 @@
+.btn {
+    @each $class, $colour in $colour-classes {
+        &.#{$class} {
+            background-color: $colour;
+            border: none;
+            @include border-radius(4px);
+            padding: 20px;
+
+            @if (lightness($colour) > 70) {
+                color: currentColor;
+            } @else {
+                color: $c-white;
+            }
+        }
+
+        &.#{$class}-info {
+            border-color: $colour;
+            color: $colour;
+            background-color: $c-white;
+        }
+    }
+
+    &.contact {
+        display: block;
+        max-width: 340px;
+        text-align: center;
+        font-size: 16px;
+    }
+}
