@@ -7,27 +7,42 @@ header {
     width: 100%;
     z-index: 10;
     top: 0;
+    left: 0;
+    /*transition: 0.5s;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);*/    
+    transition: all 0.5s cubic-bezier(0, 1, 0.5, 1);
+
     background-color: $c-white;
 
     #top .container {
         display: block;
     }
+
+    @include bp('tablet', 'max') {
+        .directory-menu-open & {
+            left: 80%;
+            transition: all 0.5s cubic-bezier(0, 1, 0.5, 1);
+        }
+    } 
 }
 
 .main-container {
     padding-top: 120px;
+    left: 0;
+    transition: all 0.5s cubic-bezier(0, 1, 0.5, 1);
 
     @include bp('tablet', 'max') {
         padding-top: 80px !important;
+
+        .directory-menu-open & {
+            left: 80%;
+            transition: all 0.5s cubic-bezier(0, 1, 0.5, 1);
+        }                
     }
 
     @include bp('mobile', 'max') {
         padding-top: 116px !important;
-    }
-
-    &.directory-menu-open {
-        margin-left: 255px;
-        transition: 0.5s;
     }
 }
 
@@ -388,9 +403,13 @@ nav.categories {
 .main-nav-group {
     display: none;
 
-    @include bp('mobile', 'max') {
+    @include bp('tablet', 'max') {
+        height: 100%;
+        overflow-y: scroll;
         width: 80%;
         position: fixed;
+        top: 0px;
+        left: 0;
     }    
 }
 
@@ -399,7 +418,7 @@ nav {
     &.main {
         /*position: absolute;
         left: 5%;*/
-        width: 90%;
+        width: 100%;
     }
 
     ul {
@@ -423,7 +442,7 @@ nav {
             .lvl1-item {
                 width: 20%;
 
-                @include bp('mobile', 'max') {
+                @include bp('tablet', 'max') {
                     width: 100%;
                 }                
 
@@ -465,6 +484,10 @@ nav {
                         height: 100%;
                         margin: 0;
                         border-left: 1px solid $c-border-color;
+
+                        @include bp('tablet', 'max') {
+                            display: none;
+                        }                        
 
                         .lvl2-item {
                             padding: 10px 20px;

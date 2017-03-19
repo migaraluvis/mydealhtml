@@ -698,21 +698,32 @@ header {
   width: 100%;
   z-index: 10;
   top: 0;
+  left: 0;
+  /*transition: 0.5s;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);*/
+  transition: all 0.5s cubic-bezier(0, 1, 0.5, 1);
   background-color: #ffffff; }
   header #top .container {
     display: block; }
+  @media (max-width: 1024px) {
+    .directory-menu-open header {
+      left: 80%;
+      transition: all 0.5s cubic-bezier(0, 1, 0.5, 1); } }
 
 .main-container {
-  padding-top: 120px; }
+  padding-top: 120px;
+  left: 0;
+  transition: all 0.5s cubic-bezier(0, 1, 0.5, 1); }
   @media (max-width: 1024px) {
     .main-container {
-      padding-top: 80px !important; } }
+      padding-top: 80px !important; }
+      .directory-menu-open .main-container {
+        left: 80%;
+        transition: all 0.5s cubic-bezier(0, 1, 0.5, 1); } }
   @media (max-width: 520px) {
     .main-container {
       padding-top: 116px !important; } }
-  .main-container.directory-menu-open {
-    margin-left: 255px;
-    transition: 0.5s; }
 
 .logo-section {
   height: 80px; }
@@ -992,15 +1003,19 @@ nav.categories p {
 
 .main-nav-group {
   display: none; }
-  @media (max-width: 520px) {
+  @media (max-width: 1024px) {
     .main-nav-group {
+      height: 100%;
+      overflow-y: scroll;
       width: 80%;
-      position: fixed; } }
+      position: fixed;
+      top: 0px;
+      left: 0; } }
 
 nav.main {
   /*position: absolute;
         left: 5%;*/
-  width: 90%; }
+  width: 100%; }
 
 nav ul {
   margin: 0;
@@ -1016,7 +1031,7 @@ nav ul {
     position: relative; }
     nav ul.main-menu .lvl1-item {
       width: 20%; }
-      @media (max-width: 520px) {
+      @media (max-width: 1024px) {
         nav ul.main-menu .lvl1-item {
           width: 100%; } }
       nav ul.main-menu .lvl1-item .lvl1-link {
@@ -1054,6 +1069,9 @@ nav ul {
           height: 100%;
           margin: 0;
           border-left: 1px solid #dcdcdc; }
+          @media (max-width: 1024px) {
+            nav ul.main-menu .lvl1-item:hover .subcategory-display {
+              display: none; } }
           nav ul.main-menu .lvl1-item:hover .subcategory-display .lvl2-item {
             padding: 10px 20px; }
           nav ul.main-menu .lvl1-item:hover .subcategory-display a {

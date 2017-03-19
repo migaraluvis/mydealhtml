@@ -45,7 +45,7 @@
         });
 
         $('.logo-section .categories.burger-menu-icon').on('click', function(){
-            $('div.main-container').toggleClass('directory-menu-open');
+            $('body').toggleClass('directory-menu-open');
             $('.main-nav-group').toggle(500);
         });
 
